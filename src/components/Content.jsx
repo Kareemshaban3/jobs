@@ -1,7 +1,7 @@
 /** @format */
 
 import { Link } from "react-router-dom";
-import Select from "./select";
+// import Select from "./select";
 import CategoriesPagination from "./CategoriesPagination";
 import Nationalities from "./Nationalities";
 import Category from "./Category";
@@ -20,7 +20,7 @@ export default function Content() {
           <br />
           <Category />
           <Jobs />
-          <Select />
+          {/* <Select /> */}
           <SelectJobs />
         </div>
         <div className='right-content'>
