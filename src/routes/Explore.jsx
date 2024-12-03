@@ -1,7 +1,7 @@
 /** @format */
 
 import { Link } from "react-router-dom";
-import Select from "../components/select";
+// import Select from "../components/select";
 import Category from "../components/Category";
 import Jobs from "../components/Jobs";
 import SelectJobs from "../components/SelectJobs";
@@ -24,7 +24,7 @@ export default function Explore() {
           </div>
           <Category />
           <Jobs />
-          <Select />
+          {/* <Select /> */}
           <SelectJobs />
         </div>
       </div>
