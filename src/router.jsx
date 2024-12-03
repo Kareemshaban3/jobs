@@ -1,7 +1,7 @@
 /** @format */
 
 import Discover from "./components/Discover";
-import Explore from "./routes/Explore";
+// import Explore from "./routes/Explore";
 import About from "./routes/About";
 import Home from "./routes/Home";
 import Contact from "./routes/Contact";
@@ -20,10 +20,10 @@ export const router = [
     path: "/",
     element: <Home />,
   },
-  {
-    path: "/explore",
-    element: <Explore />,
-  },
+  // {
+  //   path: "/explore",
+  //   element: <Explore />,
+  // },
   {
     path: "/discover",
     element: <Discover />,

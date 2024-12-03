@@ -6,7 +6,7 @@ import CategoriesPagination from "./CategoriesPagination";
 import Nationalities from "./Nationalities";
 import Category from "./Category";
 import SelectJobs from "./SelectJobs";
-import Jobs from "./Jobs";
+// import Jobs from "./Jobs";
 import FavoritesResumes from "./FavoritesResumes";
 
 export default function Content() {
@@ -19,7 +19,7 @@ export default function Content() {
           </Link>
           <br />
           <Category />
-          <Jobs />
+          {/* <Jobs /> */}
           {/* <Select /> */}
           <SelectJobs />
         </div>
