@@ -580,6 +580,40 @@ header {
   border-radius: 15px;
   transition: all 0.4s ease;
 }
+.category .all {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.category .all.active {
+  color: #009640;
+  background: rgba(0, 150, 64, 0.2);
+  border-radius: 12px;
+}
+.category .all .allLink .content {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  gap: 8px;
+  border-radius: 12px;
+}
+.category .all .allLink .content:hover {
+  background: rgba(0, 150, 64, 0.2);
+  color: #009640;
+}
+.category .all .allLink .content .img img {
+  height: 32px;
+  aspect-ratio: 1;
+  border-radius: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.category .all .allLink .content h6 {
+  margin: 0;
+  white-space: nowrap;
+  transition: all 0.4s ease-in-out;
+}
 
 .category img {
   height: 32px;
@@ -1394,7 +1428,6 @@ textarea:focus + span {
 .Notifications {
   position: fixed;
   top: 9%;
-  z-index: 10000;
   right: 6%;
   background: #fff;
   padding: 20px;
@@ -1466,7 +1499,6 @@ textarea:focus + span {
 .SidBarLogin {
   position: fixed;
   background-color: white;
-  z-index: 1111111111111;
   top: 10.8%;
   right: 1px;
   padding: 20px;
@@ -1474,17 +1506,7 @@ textarea:focus + span {
   flex-direction: column;
   animation: showLogin 1s;
   width: 350px;
-}
-.SidBarLogin .overLay {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.329);
-  animation: showLoginOver 1s;
-  width: calc(100vw - 351px);
-  transition: 0.4s;
+  z-index: 111;
 }
 .SidBarLogin .all {
   border-radius: 20px;
@@ -1528,30 +1550,26 @@ textarea:focus + span {
   font-size: 14px;
   color: black;
 }
+.SidBarLogin .all .ChangesAccount .imgCv {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.SidBarLogin .all .favorite {
+  width: 22px;
+}
 .SidBarLogin .all #rightIcon {
   color: #888 !important;
 }
-.SidBarLogin .all :nth-child(8) i.FontIcon {
+.SidBarLogin .all :nth-child(9) span.FontIcon {
   color: red !important;
 }
 @keyframes showLogin {
   0% {
-    width: 0px;
-    height: 0px;
+    width: 0;
   }
   100% {
     width: 350px;
-    height: 100%;
-  }
-}
-@keyframes showLoginOver {
-  0% {
-    width: 0px;
-    height: 0px;
-  }
-  100% {
-    width: calc(100vw - 351px);
-    height: 100%;
   }
 }
 
@@ -1870,6 +1888,192 @@ select:focus + span {
   color: #009640;
 }
 
+.CvResumes .General {
+  position: sticky;
+  top: 80px;
+  z-index: 2;
+  background: white;
+}
+.CvResumes .wrapper {
+  position: relative;
+}
+.CvResumes .wrapper ::after {
+  content: "";
+  position: absolute;
+  top: 42%;
+  z-index: -1;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e9e9e9;
+}
+.CvResumes .wrapper .navUl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  gap: 60px;
+}
+.CvResumes .wrapper .navUl li {
+  background-color: #ffffff;
+}
+.CvResumes .wrapper .navUl li .navItem {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  padding: 8px 4px;
+  gap: 8px;
+  background: #ffffff;
+  transition: all 0.4s ease-in-out;
+  color: #009640;
+}
+.CvResumes .wrapper .navUl li .navItem .step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #1d1d1b;
+  background-color: #009640;
+  cursor: pointer;
+  color: white;
+}
+.CvResumes .col-12 {
+  border: 1px dashed rgba(128, 128, 128, 0.345);
+  border-radius: 15px;
+  margin: 15px 0;
+}
+.CvResumes .col-12 .birder {
+  border: #e2e1e1 3px solid;
+  border-radius: 50%;
+}
+.CvResumes .col-12 .displayImg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  margin: 20px 0;
+}
+.CvResumes .col-12 .displayImg h2 {
+  position: absolute;
+  bottom: 3px;
+  font-size: 30px;
+  right: 42.8%;
+  color: white;
+  background-color: #009640;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 13px;
+  border: 1px solid white;
+}
+.CvResumes .col-12 .displayImg img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  padding: 5px;
+}
+.CvResumes .col-12 h6 {
+  color: #82869e;
+  padding: 5px;
+}
+.CvResumes .col-12 .form {
+  position: relative;
+  margin: 30px 0 0 0;
+}
+.CvResumes .col-12 .form .input {
+  position: relative;
+  width: 100%;
+}
+.CvResumes .col-12 .form .input span {
+  position: absolute;
+  top: 23px;
+  left: 10px;
+  color: black !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: white;
+  opacity: 0;
+}
+.CvResumes .col-12 .form .input input {
+  background: white;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(128, 128, 128, 0.356);
+  margin: 10px 0;
+  border-radius: 10px;
+  outline: none;
+  color: #000000;
+}
+.CvResumes .col-12 .form .input textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(128, 128, 128, 0.356);
+  margin: 10px 0;
+  border-radius: 10px;
+  outline: none;
+  color: #000000;
+  resize: vertical;
+  height: 160px;
+}
+.CvResumes .col-12 .inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.CvResumes .col-12 .inputs select {
+  width: 97%;
+}
+.CvResumes .col-12 .inputs .input input {
+  width: 97%;
+}
+.CvResumes .col-12 input:focus + span,
+.CvResumes textarea:focus + span {
+  top: -2px !important;
+  background-color: white !important;
+  opacity: 1 !important;
+}
+.CvResumes .Phone {
+  margin-right: 10px;
+}
+
+.number {
+  width: 100%;
+  position: relative;
+}
+.number input {
+  background-color: white;
+  width: 90%;
+  padding: 13px;
+  border: 1px solid rgba(128, 128, 128, 0.356);
+  border-radius: 12px;
+  position: relative;
+}
+.number span {
+  position: absolute;
+  left: 12px;
+  top: -11px;
+  color: black !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: white;
+  opacity: 1;
+}
+
 @media (max-width: 900px) {
   .Login .image-container {
     display: none;
@@ -1896,42 +2100,12 @@ select:focus + span {
     height: 100%;
     padding: 30px;
     overflow: hidden;
+    z-index: 1000;
     transition: all 0.3s ease-in-out;
     animation: showNav 1s;
   }
   .nav-item li {
     margin: 30px 0;
-  }
-  .nav-item .overLay {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.329);
-    width: 60%;
-    transition: 0.4s;
-    animation: overLay2 1s;
-  }
-  @keyframes showNav {
-    0% {
-      width: 0px;
-      height: 0px;
-    }
-    100% {
-      width: 40%;
-      height: 100%;
-    }
-  }
-  @keyframes overLay2 {
-    0% {
-      width: 0px;
-      height: 0px;
-    }
-    100% {
-      width: calc(100vw - 310px);
-      height: 100%;
-    }
   }
   .container {
     flex-direction: column;
@@ -1985,5 +2159,14 @@ select:focus + span {
     width: 120px !important;
     height: 40px !important;
     font-size: 13px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navSidBar {
+    display: none;
+    z-index: 100;
+  }
+  .navSidBar.active {
+    display: block;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -14,6 +14,7 @@ import Resumes from "./routes/Resumes";
 import Payment from "./routes/Payment";
 import Favorites from "./routes/Favorites";
 import Advertisements from "./routes/Advertisements";
+import CvResumes from "./components/CvResumes";
 
 export const router = [
   {
@@ -72,4 +73,8 @@ export const router = [
     path: "my-advertisements",
     element: <Advertisements />,
   },
+  {
+    path: "CvResumes",
+    element: <CvResumes />
+  }
 ];

@@ -9,19 +9,26 @@ import Notifications from "./ui/Layout/Notifications";
 import SidBarLogin from "./components/SidBarLogin";
 
 function App() {
-  const [showNotifications , setShowNotifications]= useState(false)
-  
-  const [showSidBarLogin , setShowSidBarLogin]= useState(false)
+  const [showNotifications, setShowNotifications] = useState(false);
+
+  const [showSidBarLogin, setShowSidBarLogin] = useState(false);
   return (
     <>
-      {showSidBarLogin?<SidBarLogin  setShowSidBarLogin={setShowSidBarLogin}  /> :<></>}
-      {showNotifications? <Notifications /> : <></>}
-      <Header  setShowSidBarLogin={setShowSidBarLogin}    setShowNotifications={setShowNotifications} />
-        <Routes>
-          {router.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-        </Routes>
+      {showSidBarLogin ? (
+        <SidBarLogin setShowSidBarLogin={setShowSidBarLogin} />
+      ) : (
+        <></>
+      )}
+      {showNotifications ? <Notifications /> : <></>}
+      <Header
+        setShowSidBarLogin={setShowSidBarLogin}
+        setShowNotifications={setShowNotifications}
+      />
+      <Routes>
+        {router.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
       <Footer />
     </>
   );

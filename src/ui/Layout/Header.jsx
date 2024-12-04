@@ -3,7 +3,7 @@
 import {  useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 export default function Header({ setShowNotifications ,setShowSidBarLogin }) {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
 
   const setActiveClass = (path) => {
@@ -15,9 +15,7 @@ export default function Header({ setShowNotifications ,setShowSidBarLogin }) {
 
   
   const handleToggleMenu = () => {
-    if (window.innerWidth <= 800) {
-      setIsVisible((prev) => (prev === false ? true : false));
-    }
+    setIsVisible(!isVisible);
   };
 
   const handleeShowNotifications = () => {
@@ -38,7 +36,7 @@ const handleShowSideBarLogins = () => {
             <img src='/images/logo.svg' alt='' />
           </Link>
         </div>
-        <div style={{ display: isVisible ? "block" : "none" }}>
+        <div className={`navSidBar ${isVisible ? "active" :""}`} >
           <ul className='nav-item'>
           <div onClick={() => handleToggleMenu()} className="overLay"></div>
 
