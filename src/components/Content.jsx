@@ -1,14 +1,13 @@
 /** @format */
 
 import { Link } from "react-router-dom";
-// import Select from "./select";
 import CategoriesPagination from "./CategoriesPagination";
 import Nationalities from "./Nationalities";
 import Category from "./Category";
 import SelectJobs from "./SelectJobs";
 import Jobs from "./Jobs";
 import FavoritesResumes from "./FavoritesResumes";
-import Select from "./select";
+import SelectOptions from "./SelectOptions";
 
 export default function Content() {
   return (
@@ -21,7 +20,7 @@ export default function Content() {
           <br />
           <Category />
           <Jobs />
-          <Select />
+          <SelectOptions/>
           <SelectJobs />
         </div>
         <div className='right-content'>

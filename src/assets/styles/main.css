@@ -468,7 +468,7 @@ header {
 }
 
 .hero {
-  background: url("images/yB9HOIoCBq1719990701.webp");
+  background: url("/public/images/yB9HOIoCBq1719990701.webp");
   background-size: cover;
   background-position: center;
   height: 100px;
@@ -985,7 +985,7 @@ header {
 }
 
 .Explore {
-  background: linear-gradient(to bottom, #d1ecdc, white 5%);
+  background: linear-gradient(to bottom, #d1ecdc, white 3.5%);
 }
 .Explore .top-container {
   padding: 30px 0;

@@ -99,7 +99,7 @@ header {
   cursor: pointer;
 }
 .hero {
-  background: url("images/yB9HOIoCBq1719990701.webp");
+  background: url("/public/images/yB9HOIoCBq1719990701.webp");
   background-size: cover;
   background-position: center;
   height: 100px;
@@ -273,17 +273,16 @@ header {
   }
 }
 
-.jobs .info-job{
+.jobs .info-job {
   display: flex;
   padding: 10px;
   border-radius: 10px;
   align-items: center;
   flex-direction: column;
 }
-.jobs .img-job:hover{
+.jobs .img-job:hover {
   color: #009640;
   background-color: #d1ecdc;
-
 }
 
 .img-job .active {
@@ -310,7 +309,7 @@ header {
   display: none;
 }
 
-.filter{
+.filter {
   width: 100%;
   padding-bottom: 8px;
   overflow-x: scroll;
@@ -321,9 +320,9 @@ header {
   align-items: center;
   overflow: hidden;
   overflow-x: scroll;
-li{
-  flex: 1 0 0;
-}
+  li {
+    flex: 1 0 0;
+  }
 }
 .selects::-webkit-scrollbar {
   display: none !important;
@@ -343,7 +342,7 @@ li{
 }
 
 .selects button {
-  background-color: #ebe9e996  !important;
+  background-color: #ebe9e996 !important;
   width: 170px;
   height: 50px;
   border: none;
@@ -354,12 +353,11 @@ li{
   cursor: pointer;
   transition: 0.4s;
   font-size: 14px;
-  &.active{
+  &.active {
     background-color: rgba(0, 150, 64, 0.0509803922) !important;
     border: 1px solid #009640;
   }
 }
-
 
 @media (min-width: 902px) and (max-width: 1150px) {
   .select {
@@ -622,7 +620,7 @@ li{
 }
 
 .Explore {
-  background: linear-gradient(to bottom, #d1ecdc, white 5%);
+  background: linear-gradient(to bottom, #d1ecdc, white 3.5%);
   .top-container {
     padding: 30px 0;
     display: flex;

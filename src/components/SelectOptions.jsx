@@ -6,7 +6,7 @@ import SelectField from "../ui/Layout/form-elements/SelectField";
 import useGetCountries from "../hooks/app/useGetCountries";
 import { useState } from "react";
 
-export default function Select() {
+export default function SelectOptions() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeFilter, setActiveFilter] = useState(null);
 
