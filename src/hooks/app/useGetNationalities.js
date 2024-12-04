@@ -5,12 +5,12 @@
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../../utils/axiosInstance";
 
-export default function useGetCategories() {
+export default function useGetNationalities() {
   const { isLoading, data, error } = useQuery({
-    queryKey: ["categories"],
+    queryKey: ["nationalities"],
     queryFn: async () => {
       try {
-        const res = await axiosInstance.get("/categories");
+        const res = await axiosInstance.get("/nationalities");
         if (res.status === 200) {
           return res.data.data;
         }

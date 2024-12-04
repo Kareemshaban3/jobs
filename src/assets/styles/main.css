@@ -634,15 +634,30 @@ header {
 
 .jobs .img-job {
   background-color: #f8f8f8;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
+  transition: all 0.3s ease;
   border-radius: 10px;
   cursor: pointer;
 }
+.jobs .img-job.active {
+  background-color: #d1ecdc;
+  color: #009640;
+}
+
+.jobs .info-job {
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+}
 
 .jobs .img-job:hover {
+  color: #009640;
+  background-color: #d1ecdc;
+}
+
+.img-job .active {
+  background-color: #d1ecdc;
   color: #009640;
 }
 
@@ -652,6 +667,7 @@ header {
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
+  background-color: #009640;
 }
 
 .jobs h6 {
@@ -664,13 +680,21 @@ header {
   display: none;
 }
 
+.filter {
+  width: 100%;
+  padding-bottom: 8px;
+  overflow-x: scroll;
+}
+
 .selects {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
   align-items: center;
-  width: 100%;
   overflow: hidden;
   overflow-x: scroll;
+}
+.selects li {
+  flex: 1 0 0;
 }
 
 .selects::-webkit-scrollbar {
@@ -678,7 +702,7 @@ header {
 }
 
 .select {
-  width: 180px;
+  width: 100%;
   margin: 30px 2px;
 }
 
@@ -693,7 +717,7 @@ header {
 }
 
 .selects button {
-  background-color: #ebe9e9;
+  background-color: rgba(235, 233, 233, 0.5882352941) !important;
   width: 170px;
   height: 50px;
   border: none;
@@ -705,10 +729,9 @@ header {
   transition: 0.4s;
   font-size: 14px;
 }
-
-.selects button:focus {
-  background-color: #009640;
-  color: white;
+.selects button.active {
+  background-color: rgba(0, 150, 64, 0.0509803922) !important;
+  border: 1px solid #009640;
 }
 
 @media (min-width: 902px) and (max-width: 1150px) {
@@ -962,7 +985,7 @@ header {
 }
 
 .Explore {
-  background: linear-gradient(to bottom, #d1ecdc, white 3%);
+  background: linear-gradient(to bottom, #d1ecdc, white 5%);
 }
 .Explore .top-container {
   padding: 30px 0;

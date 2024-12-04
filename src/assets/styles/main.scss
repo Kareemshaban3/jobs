@@ -264,14 +264,30 @@ header {
 
 .jobs .img-job {
   background-color: #f8f8f8;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
+  transition: all 0.3s ease;
   border-radius: 10px;
   cursor: pointer;
+  &.active {
+    background-color: #d1ecdc;
+    color: #009640;
+  }
 }
-.jobs .img-job:hover {
+
+.jobs .info-job{
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+}
+.jobs .img-job:hover{
+  color: #009640;
+  background-color: #d1ecdc;
+
+}
+
+.img-job .active {
+  background-color: #d1ecdc;
   color: #009640;
 }
 
@@ -281,6 +297,7 @@ header {
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
+  background-color: #009640;
 }
 
 .jobs h6 {
@@ -293,19 +310,26 @@ header {
   display: none;
 }
 
+.filter{
+  width: 100%;
+  padding-bottom: 8px;
+  overflow-x: scroll;
+}
 .selects {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
   align-items: center;
-  width: 100%;
   overflow: hidden;
   overflow-x: scroll;
+li{
+  flex: 1 0 0;
+}
 }
 .selects::-webkit-scrollbar {
   display: none !important;
 }
 .select {
-  width: 180px;
+  width: 100%;
   margin: 30px 2px;
 }
 .Select-re {
@@ -319,7 +343,7 @@ header {
 }
 
 .selects button {
-  background-color: #ebe9e9;
+  background-color: #ebe9e996  !important;
   width: 170px;
   height: 50px;
   border: none;
@@ -330,12 +354,12 @@ header {
   cursor: pointer;
   transition: 0.4s;
   font-size: 14px;
+  &.active{
+    background-color: rgba(0, 150, 64, 0.0509803922) !important;
+    border: 1px solid #009640;
+  }
 }
 
-.selects button:focus {
-  background-color: #009640;
-  color: white;
-}
 
 @media (min-width: 902px) and (max-width: 1150px) {
   .select {
@@ -1363,8 +1387,8 @@ select:focus + span {
     grid-template-columns: repeat(3, calc(98% / 3));
     gap: 10px;
   }
-  button{
-    margin:  30px  auto 5px;
+  button {
+    margin: 30px auto 5px;
     background-color: #009640;
     color: white;
     padding: 8px 15px;
@@ -1510,27 +1534,31 @@ select:focus + span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 20vh; 
+  height: 20vh;
 }
 
 .loading-spinner {
   border: 8px solid #f3f3f3;
-  border-top: 8px solid #009640; 
+  border-top: 8px solid #009640;
   border-radius: 50%;
-  width: 60px; 
+  width: 60px;
   height: 60px;
-  animation: spin 2s linear infinite; 
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-container p {
-  margin-top: 16px; 
-  font-size: 18px; 
-  color: #009640; 
+  margin-top: 16px;
+  font-size: 18px;
+  color: #009640;
 }
 
 // Start media//

@@ -1,19 +1,20 @@
+/** @format */
+
 // الشريط الثاني
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../../utils/axiosInstance";
 import { useSearchParams } from "react-router-dom";
 export default function useJobs() {
   const [searchParams] = useSearchParams();
-  const category = searchParams.get('category');
+  const category = searchParams.get("category");
   const { isLoading, data, error } = useQuery({
-    
     queryKey: ["jobs", category],
     queryFn: async () => {
       try {
-        const res = await axiosInstance.get("/jobs",{
+        const res = await axiosInstance.get("/jobs", {
           params: {
             category_id: category,
-          }
+          },
         });
         if (res.status === 200) {
           return res.data.data;
@@ -30,5 +31,3 @@ export default function useJobs() {
 
   return { isLoading, data, error };
 }
-
-

@@ -2,30 +2,38 @@
 
 //  الشريط الثالث
 
-
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../../utils/axiosInstance";
 import { useSearchParams } from "react-router-dom";
 
-const limit = 21; 
 export default function useResumes() {
   const [searchParams] = useSearchParams();
-  const category = searchParams.get('category');
+  const category = searchParams.get("category");
+  const subCategory = searchParams.get("subCategory");
+  const nationality = searchParams.get("nationality");
+  const country = searchParams.get("country");
+  const gender = searchParams.get("Gender");
+  const religion = searchParams.get("religion");
+  const type = searchParams.get("type");
+  
+
   const { isLoading, data, error } = useQuery({
-    queryKey: ["resumes", limit,category ],
+    queryKey: ["resumes", category, subCategory, nationality, country , gender,religion ,type],
     queryFn: async () => {
       try {
-        const res = await axiosInstance.get("/resumes",{
+        const res = await axiosInstance.get("/resumes", {
           params: {
-            category_id : category,
-            // job_id : job ,
-            // nationality_id : national ,
-            // company_id : company
-          }
+            category_id: category,
+            job_id: subCategory,
+            nationality_id: nationality,
+            country_name: country,
+            gender :gender,  
+            religion :religion,  
+            offer_type:type
+          },
         });
-
         if (res.status === 200) {
-          return res.data.data.slice(0, limit);
+          return res.data.data;
         }
         throw new Error("Failed to fetch resumes");
       } catch (error) {
